@@ -5,12 +5,12 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.templating import Jinja2Templates
 import uvicorn, aiohttp, asyncio
 from io import BytesIO, StringIO
-from fastai.vision.all import *
+import tensorflow as tf
 import base64
 import pdb
 
-export_file_name = 'export.pkl'
-classes = ['Normal', 'Covid', 'Viral Pneumonia']
+export_file_name = 'final_model.h5'
+classes = ['Cassava Bacterial Blight (CBB)', 'Cassava Mosaic Disease (CMD)', 'Cassava Brown Streak Disease (CBSD)', 'Cassava Green Mottle (CGM)', 'Healthy']
 path = Path(__file__).parent.parent
 
 templates = Jinja2Templates(directory='src/templates')
@@ -19,25 +19,25 @@ app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Reques
 app.mount('/static', StaticFiles(directory='src/static'))
 
 async def setup_learner():
-#     await download_file(export_file_url, path/'models'/export_file_name)
-    defaults.device = torch.device('cpu')
-    learn = load_learner(path/export_file_name)
-    return learn
+    fin_model = tf.keras.models.load_model(path/export_file_name)
+    return fin_model
 
 loop = asyncio.get_event_loop()
 tasks = [asyncio.ensure_future(setup_learner())]
-learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
+fin_model = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
 
 	
 async def model_predict(img_b):
-    img = PILImage.create(BytesIO(img_b))
-    outputs = learn.predict(img)[2].numpy()
+    image = PIL.Image.open(img_b)
+    image_numpy = np.expand_dims(np.array(image), 0) #add batch dim
+    # these 2 will be the only preprocessing steps required
+    
+    outputs = fin_model(image_numpy, training=False).numpy()
     formatted_outputs = [f"{i*100:.2f}" for i in outputs]
     pred_probs = zip(classes, map(str, formatted_outputs))
 
-    img_bytes  = img.to_bytes_format()
-    img_data = base64.b64encode(img_bytes).decode()
+    img_data = base64.b64encode(img_b).decode()
 
     result = {"probs":pred_probs, "image":img_data}
     return result
