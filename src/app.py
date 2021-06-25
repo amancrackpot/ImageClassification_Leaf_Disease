@@ -6,6 +6,7 @@ from starlette.templating import Jinja2Templates
 import uvicorn, aiohttp, asyncio
 from io import BytesIO, StringIO
 import tensorflow as tf
+import PIL
 import base64
 import pdb
 
