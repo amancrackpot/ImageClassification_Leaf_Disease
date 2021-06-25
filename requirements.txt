@@ -1,6 +1,4 @@
--f https://download.pytorch.org/whl/torch_stable.html
-torch==1.8.1+cpu 
-torchvision==0.9.1+cpu
+tensorflow==2.4.1
 starlette
 uvicorn
 python-multipart
@@ -9,6 +7,3 @@ aiohttp
 jinja2
 numpy
 pillow
-fastai
-fastcore
-fastprogress
