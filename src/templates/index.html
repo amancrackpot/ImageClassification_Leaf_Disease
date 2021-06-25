@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Classify Chest X-Ray Scans</h1>
+<p class="comment">Find out if the lungs are normal or not. Upload image or specify URL.</p>
+<dive class="col-xs-6">
+    <form action="/upload" id="upload-file" method="post" enctype="multipart/form-data">
+        <p class="comment">Select image to upload and press Classify:</p>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" name="file" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+
+        </div>
+
+        <div>
+            <input type="submit" class="btn btn-success" id="btn-predict" value="Classify" />
+        </div>
+    </form>
+
+    <h5 class="comment">OR</h5>
+    <p class="comment">Enter image URL and press Classify:</p>
+    <form action="/classify-url" id="submit-url" method="post">
+        <div class="col-xs-4">
+            <input type="url" class="form-control" name="url" id="url-input" placeholder="Enter image URL">
+        </div>
+        <div>
+            <input type="submit" class="btn btn-success" value="Classify">
+        </div>
+    </form>
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+</dive>
+{% endblock %}
