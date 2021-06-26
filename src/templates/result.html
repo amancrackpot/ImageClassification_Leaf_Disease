@@ -3,18 +3,19 @@
 <html>
 
 <body>
+  <p>Prediction: <b>{{result.get("class")}}</b></p>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Result class</th>
+      <th scope="col">Class Type</th>
       <th scope="col">Confidence</th>
     </tr>
   </thead>
   <tbody>
     {%for i in range(0, 5)%}
     <tr>
-      <th scope="row">{{result.get("probs")[i][0]}}</th>
-      <td>{{result.get("probs")[i][1]}}</td>
+      <th scope="row">{{result.get("probs")[0][i]}}</th>
+      <td>{{result.get("probs")[1][i]}}</td>
      
     </tr>
     {%endfor%}
