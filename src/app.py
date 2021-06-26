@@ -9,10 +9,11 @@ import tensorflow as tf
 import PIL
 import base64
 import pdb
+from pathlib import Path
 
 export_file_name = 'final_model.h5'
 classes = ['Cassava Bacterial Blight (CBB)', 'Cassava Mosaic Disease (CMD)', 'Cassava Brown Streak Disease (CBSD)', 'Cassava Green Mottle (CGM)', 'Healthy']
-path = Path(__file__).parent.parent
+path = Path(__file__).parent
 
 templates = Jinja2Templates(directory='src/templates')
 app = Starlette()
