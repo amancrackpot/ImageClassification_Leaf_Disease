@@ -1,5 +1,5 @@
 # Disease Indentification on Cassava Leaf:
-### In this our task is to classify each cassava plant image into four disease categories or a fifth category indicating a healthy leaf. With this, farmers may be able to quickly identify diseased plants, potentially saving their crops before they inflict irreparable damage.
+#### In this our task is to classify each cassava plant image into four disease categories or a fifth category indicating a healthy leaf. With this, farmers may be able to quickly identify diseased plants, potentially saving their crops before they inflict irreparable damage.
 
 #### Categories
 - Cassava Bacterial Blight (CBB)
