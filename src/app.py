@@ -39,7 +39,7 @@ def model_predict(img_b):
     
     outputs = fin_model(image_numpy, training=False).numpy()
     label = classes[np.argmax(outputs)]
-    formatted_outputs = [f"{i*100:.2f}" for i in outputs]	
+    formatted_outputs = [str(i)+'%' for i in np.round(outputs*100,2)]
     
 	
 	
