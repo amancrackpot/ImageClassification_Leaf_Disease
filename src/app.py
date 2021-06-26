@@ -11,6 +11,7 @@ import PIL
 import base64
 import pdb
 from pathlib import Path
+import numpy as np
 
 export_file_name = 'final_model.h5'
 classes = ['Cassava Bacterial Blight (CBB)', 'Cassava Mosaic Disease (CMD)', 'Cassava Brown Streak Disease (CBSD)', 'Cassava Green Mottle (CGM)', 'Healthy']
