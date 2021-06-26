@@ -44,12 +44,16 @@ async def model_predict(img_b):
     # these 2 will be the only preprocessing steps required
     
     outputs = fin_model(image_numpy, training=False).numpy()
-    formatted_outputs = [f"{i*100:.2f}" for i in outputs]
-    pred_probs = zip(classes, map(str, formatted_outputs))
+    label = classes[np.argmax(outputs)]
+    formatted_outputs = [f"{i*100:.2f}" for i in outputs]	
+    
+	
+	
+    pred_probs = (classes, formatted_outputs)
 
     img_data = base64.b64encode(img_b).decode()
 
-    result = {"probs":pred_probs, "image":img_data}
+    result = {"class":label, "probs":pred_probs, "image":img_data}
     return result
    
 
