@@ -30,7 +30,7 @@ app.mount('/static', StaticFiles(directory='src/static'))
 
 
 fin_model = tf.keras.models.load_model(path/'saved'/export_file_name)
-graph = tf.get_default_graph()
+# graph = tf.get_default_graph()
 
 def model_predict(img_b):  
     image = PIL.Image.open(BytesIO(img_b))
