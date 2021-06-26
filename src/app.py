@@ -21,7 +21,7 @@ app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Reques
 app.mount('/static', StaticFiles(directory='src/static'))
 
 async def setup_learner():
-    fin_model = tf.keras.models.load_model(path/export_file_name)
+    fin_model = tf.keras.models.load_model(path/'saved'/export_file_name)
     return fin_model
 
 loop = asyncio.get_event_loop()
