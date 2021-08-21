@@ -8,6 +8,7 @@
 - Cassava Mosaic Disease (CMD)
 - "Healthy
 
+![image](https://github.com/amancrackpot/ImageClassification_Leaf_Disease/blob/master/Results/target_dist.png)
 
 #### The code needed to train the model is detailed in here https://github.com/amancrackpot/ImageClassification_Leaf_Disease/blob/master/cassava-tensorflow-resnet50.ipynb
 I have used transfer learning by making use of pre-trained resnet50 and finetuning it
