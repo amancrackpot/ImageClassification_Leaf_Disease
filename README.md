@@ -7,9 +7,6 @@
 - Cassava Green Mottle (CGM)
 - Cassava Mosaic Disease (CMD)
 - "Healthy
-- 
-### Simple Web App available at: https://leaf-disease-indentifier.onrender.com/
-![demo](https://github.com/amancrackpot/ImageClassification_Leaf_Disease/blob/master/Results/webapplet.gif)
 
 
 #### The code needed to train the model is detailed in here https://github.com/amancrackpot/ImageClassification_Leaf_Disease/blob/master/cassava-tensorflow-resnet50.ipynb
