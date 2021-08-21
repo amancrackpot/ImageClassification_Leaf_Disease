@@ -11,7 +11,7 @@
 ![image](https://github.com/amancrackpot/ImageClassification_Leaf_Disease/blob/master/Results/target_dist.png)
 
 #### The code needed to train the model is detailed in here https://github.com/amancrackpot/ImageClassification_Leaf_Disease/blob/master/cassava-tensorflow-resnet50.ipynb
-I have used transfer learning by making use of pre-trained resnet50 and finetuning it
+Deep Learning has been used to create this model using Tensorflow. I have used Transfer Learning which involves loading a generic well trained image classification model for feature extraction and then adding a few layers as head so that it can be trained for our specific task. Apart from this, to train the system and get better results, modern deep learning practices have been used like data-augmentation , one-cycle-policy, discriminative-learning-rate, etc
 
 #### Dataset available at https://www.kaggle.com/c/cassava-leaf-disease-classification
 ## Results on test data
