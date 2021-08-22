@@ -26,7 +26,6 @@ def show_results(img):
     label = classes[np.argmax(outputs)]
 
     pred_probs = list(outputs)
-    print(pred_probs)
     df = pd.DataFrame({'Label':classes,'Confidence':pred_probs}).set_index('Label')
     
     col1, col2 = st.columns(2)
