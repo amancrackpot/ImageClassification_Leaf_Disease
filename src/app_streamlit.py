@@ -25,7 +25,7 @@ def show_results(img):
     outputs = st.session_state.fin_model(image_numpy, training=False).numpy()
     label = classes[np.argmax(outputs)]
 
-    pred_probs = outputs.numpy()*100
+    pred_probs = outputs*100
     df = pd.DataFrame({'Label':classes,'Confidence':pred_probs}).set_index('Label')
     
     col1, col2 = st.beta_columns(2)
