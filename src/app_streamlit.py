@@ -2,6 +2,7 @@ from io import BytesIO
 import requests
 import tensorflow as tf
 import numpy as np
+import pandas as pd
 import PIL
 import pathlib
 import platform
