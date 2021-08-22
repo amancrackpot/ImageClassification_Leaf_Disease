@@ -26,7 +26,7 @@ def show_results(img):
     outputs = st.session_state.fin_model(image_numpy, training=False).numpy()
     label = classes[np.argmax(outputs)]
 
-    pred_probs = np.round(outputs*100,2)
+    pred_probs = np.round_(outputs*100,2)
     df = pd.DataFrame({'Label':classes,'Confidence':pred_probs}).set_index('Label')
     
     col1, col2 = st.columns(2)
@@ -49,9 +49,9 @@ st.markdown(f""" <style>
     }} </style> """, unsafe_allow_html=True)
 
 
-st.title('Chest X-Ray Scan Classifier')
+st.title('Cassava Leaf Disease Classification')
 st.markdown('<hr>',unsafe_allow_html=True)
-st.write('Find out if the lungs are healthy or not. Upload Chest X-Ray Scanned Image or Specify URL.')
+st.write('Identify the type of disease present on a Cassava Leaf image. Upload Image or Specify URL.')
 
 
 st.sidebar.title('Configurations')
