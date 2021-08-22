@@ -1,6 +1,7 @@
 from io import BytesIO
 import requests
 import tensorflow as tf
+import numpy as np
 import PIL
 import pathlib
 import platform
