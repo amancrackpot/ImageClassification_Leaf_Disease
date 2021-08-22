@@ -1,6 +1,7 @@
 # Disease Indentification on Cassava Leaf
 
 #### Web-App Link : https://share.streamlit.io/tripathigithub/imageclassification_leaf_disease/src/app_streamlit.py
+![](https://github.com/tripathiGithub/ImageClassification_Leaf_Disease/blob/master/Results/leaf.gif)
 
 #### In this our task is to classify each cassava plant image into four disease categories or a fifth category indicating a healthy leaf. With this, farmers may be able to quickly identify diseased plants, potentially saving their crops before they inflict irreparable damage.
 
