@@ -57,7 +57,7 @@ menu = ['Demo','Upload', 'URL']
 choice = st.sidebar.selectbox("Select Image Source", menu)
 st.sidebar.write('')
 st.sidebar.write('')
-cont = st.sidebar.beta_container()
+cont = st.sidebar.container()
 st.sidebar.write('')
 st.sidebar.write('')
 btn = st.sidebar.button('Analyze')
@@ -97,6 +97,6 @@ else:
             show_results(img)
 
     
-with st.beta_expander("Dataset Link"):
+with st.expander("Dataset Link"):
     st.markdown('https://www.kaggle.com/c/cassava-leaf-disease-classification')
    
