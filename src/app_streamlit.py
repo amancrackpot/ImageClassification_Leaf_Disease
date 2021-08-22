@@ -42,7 +42,7 @@ def show_results(img):
         st.info(f'Predicted Label : {label}')
         
     
-padding = 2
+padding = 1
 st.markdown(f""" <style>
     .reportview-container .main .block-container{{
         padding-top: {padding}rem;
