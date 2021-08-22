@@ -13,7 +13,7 @@ if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
 export_file_name = 'final_model.h5'
 classes = ['Cassava Bacterial Blight (CBB)', 'Cassava Mosaic Disease (CMD)', 'Cassava Brown Streak Disease (CBSD)', 'Cassava Green Mottle (CGM)', 'Healthy']
-path = Path(__file__).parent
+path = pathlib.Path(__file__).parent
 
 if 'learn' not in st.session_state :
     st.session_state.fin_model = tf.keras.models.load_model(path/'saved'/export_file_name)
