@@ -25,7 +25,7 @@ def show_results(img):
     outputs = fin_model(image_numpy, training=False).numpy()
     label = classes[np.argmax(outputs)]
 
-    pred_probs = list(np.around(outputs*100,2))
+    pred_probs = list(outputs)
     print(pred_probs)
     df = pd.DataFrame({'Label':classes,'Confidence':pred_probs}).set_index('Label')
     
