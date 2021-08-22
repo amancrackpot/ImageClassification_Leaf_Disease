@@ -26,19 +26,20 @@ def show_results(img):
     outputs = st.session_state.fin_model(image_numpy, training=False).numpy()
     label = classes[np.argmax(outputs)]
 
-    pred_probs = outputs*100
+    pred_probs = np.round(outputs*100,2)
     df = pd.DataFrame({'Label':classes,'Confidence':pred_probs}).set_index('Label')
     
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns(2)
             
     with col1:
         st.subheader('Uploaded Image')
         st.image(img)
+        st.info(f'Predicted Label : {label}')
             
     with col2:   
         st.subheader('Analysis Report')
         st.table(df)
-        st.info(f'Predicted Label : {label}')
+        
     
 padding = 0
 st.markdown(f""" <style>
