@@ -38,7 +38,7 @@ def show_results(img):
             
     with col2:   
         st.subheader('Analysis Report')
-        st.write(df)
+        st.table(df.style.format("{:.2%}"))
         
     
 padding = 2
