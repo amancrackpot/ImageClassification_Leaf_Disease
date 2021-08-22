@@ -38,7 +38,7 @@ def show_results(img):
             
     with col2:   
         st.subheader('Analysis Report')
-        st.table(df)
+        st.write(df)
         
     
 padding = 0
