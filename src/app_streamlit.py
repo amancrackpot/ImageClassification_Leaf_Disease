@@ -1,6 +1,7 @@
 from io import BytesIO
 import requests
 import tensorflow as tf
+import PIL
 import pathlib
 import platform
 import streamlit as st
@@ -68,7 +69,7 @@ if choice == 'Upload':
     if btn and uploaded_file is not None:
         with st.spinner(text='Analyzing...'):
             try:
-                img = PILImage.create(uploaded_file)
+                img = PIL.Image.open(uploaded_file)
                 show_results(img)
             except:
                 st.error('Invalid File uploaded')
@@ -81,7 +82,7 @@ elif choice == 'URL':
             try:
                 content = requests.get(url).content
                 img = BytesIO(content)
-                img = PILImage.create(img)
+                img = PIL.Image.open(img)
                 show_results(img)
             except:
                 st.error('URL specified is invalid')
@@ -93,7 +94,7 @@ else:
         with st.spinner(text='Analyzing...'):
             content = requests.get(url).content
             img = BytesIO(content)
-            img = PILImage.create(img)
+            img = PIL.Image.open(img)
             show_results(img)
 
     
