@@ -9,7 +9,7 @@ import platform
 import streamlit as st
 STREAMLIT_THEME_BASE='light'
 
-st.set_page_config(layout='centered')
+st.set_page_config(layout='wide')
 plt = platform.system()
 if plt == 'Windows': pathlib.PosixPath = pathlib.WindowsPath
 
@@ -34,11 +34,12 @@ def show_results(img):
     with col1:
         st.subheader('Uploaded Image')
         st.image(img)
-        st.info(f'Predicted Label : {label}')
+        
             
     with col2:   
         st.subheader('Analysis Report')
         st.table(df.style.format("{:.2%}"))
+        st.info(f'Predicted Label : {label}')
         
     
 padding = 2
