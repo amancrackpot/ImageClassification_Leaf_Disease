@@ -41,7 +41,7 @@ def show_results(img):
         st.write(df)
         
     
-padding = 0
+padding = 2
 st.markdown(f""" <style>
     .reportview-container .main .block-container{{
         padding-top: {padding}rem;
