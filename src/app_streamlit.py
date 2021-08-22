@@ -18,11 +18,12 @@ export_file_name = 'final_model.h5'
 classes = ['Cassava Bacterial Blight (CBB)', 'Cassava Mosaic Disease (CMD)', 'Cassava Brown Streak Disease (CBSD)', 'Cassava Green Mottle (CGM)', 'Healthy']
 path = pathlib.Path(__file__).parent
 
-fin_model = tf.keras.models.load_model(path/'saved'/export_file_name,compile=False)
+if 'fin_model' not in st.session_state :
+    st.session_state.fin_model = tf.keras.models.load_model(path/'saved'/export_file_name,compile=False)
 
 def show_results(img):
     image_numpy = np.expand_dims(np.array(img), 0) #add batch dim
-    outputs = fin_model(image_numpy, training=False).numpy()
+    outputs = st.session_state.fin_model(image_numpy, training=False).numpy()
     label = classes[np.argmax(outputs)]
 
     pred_probs = list(outputs)
